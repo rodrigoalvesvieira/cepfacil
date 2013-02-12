@@ -52,8 +52,9 @@
 
 <h2>Uso</h2>
 
-<div class="highlight"><pre>
-<span class="n">String</span> <span class="n">zipCode</span> <span class="o">=</span> <span class="s">"53417-540"</span><span class="o">;</span>
+<div class="highlight">
+  
+  <pre><span class="n">String</span> <span class="n">zipCode</span> <span class="o">=</span> <span class="s">"53417-540"</span><span class="o">;</span>
 <span class="n">String</span> <span class="n">token</span> <span class="o">=</span> <span class="s">"0E2ACA03-FC7F-4E87-9046-A8C46637BA9D"</span><span class="o">;</span> <span class="c1">// obtenha o seu em www.cepfacil.com.br</span>
 
 <span class="n">CepFacil</span> <span class="n">ruaCasa</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CepFacil</span><span class="o">(</span><span class="n">zipCode</span><span class="o">,</span> <span class="n">token</span><span class="o">);</span>
@@ -66,7 +67,18 @@
 
 <span class="n">ruaCasa</span><span class="o">.</span><span class="na">isValid</span><span class="o">();</span> <span class="c1">// retorna true caso o endereço tenha sido encontrado, do contrário retorna false. Essa tu advinhou, hein?</span>
 
-</pre></div>
+<span class="c1">// Invocando o método toString(); você obtém o endereço por extenso:</span>
+
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">ruaCasa</span><span class="o">);</span> <span class="c1">// RUA PANELAS, PAULISTA 53416-540 - PE, Brasil</span>
+
+<span class="c1">// Para uma versão do método toString(); que inclui o atributo bairro (neighborhood)</span>
+<span class="c1">// você pode usar um outro método, chamado fullAddress();</span>
+
+<span class="n">ruaCasa</span><span class="o">.</span><span class="na">fullAddress</span><span class="o">();</span> <span class="c1">// RUA PANELAS, ARTUR LUNDGREN II, PAULISTA 53416-540 - PE, Brasil</span>
+
+</pre>
+  
+</div>
 
 <p>O objeto rua <code>ruaCasa</code> tem 8 atributos:</p>
 
