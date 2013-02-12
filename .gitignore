@@ -1,0 +1,24 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# IntelliJ specific files/directories
+out
+.idea
+*.ipr
+*.iws
+*.iml
+atlassian-ide-plugin.xml
+
+# Eclipse specific files/directories
+.classpath
+.project
+.settings
+.metadata
+bin/
+
+# NetBeans specific files/directories
+.nbattrs
