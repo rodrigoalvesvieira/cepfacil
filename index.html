@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Cepfacil by rodrigoalvesvieira</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/rodrigoalvesvieira/cepfacil">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Cepfacil</h1>
+            <h2>Wrapper Java para o serviço CepFacil</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/rodrigoalvesvieira/cepfacil/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/rodrigoalvesvieira/cepfacil/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>CepFacil for Java</h1>
+
+<p>Wrapper Java para o serviço <a href="cepfacil.com.br">CepFacil</a></p>
+
+<h2>Uso</h2>
+
+<div class="highlight"><pre>
+<span class="n">String</span> <span class="n">zipCode</span> <span class="o">=</span> <span class="s">"53417-540"</span><span class="o">;</span>
+<span class="n">String</span> <span class="n">token</span> <span class="o">=</span> <span class="s">"0E2ACA03-FC7F-4E87-9046-A8C46637BA9D"</span><span class="o">;</span> <span class="c1">// obtenha o seu em www.cepfacil.com.br</span>
+
+<span class="n">CepFacil</span> <span class="n">ruaCasa</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CepFacil</span><span class="o">(</span><span class="n">zipCode</span><span class="o">,</span> <span class="n">token</span><span class="o">);</span>
+
+<span class="n">ruaCasa</span><span class="o">.</span><span class="na">getZipCode</span><span class="o">();</span>
+
+<span class="n">ruaCasa</span><span class="o">.</span><span class="na">getCity</span><span class="o">();</span>
+
+<span class="n">ruaCasa</span><span class="o">.</span><span class="na">getNeighborhood</span><span class="o">();</span>
+
+<span class="n">ruaCasa</span><span class="o">.</span><span class="na">isValid</span><span class="o">();</span> <span class="c1">// retorna true caso o endereço tenha sido encontrado, do contrário retorna false. Essa tu advinhou, hein?</span>
+
+</pre></div>
+
+<p>O objeto rua <code>ruaCasa</code> tem 8 atributos:</p>
+
+<p><code>zipCode</code>, <code>apiKey</code>, <code>state</code>, <code>addressType</code>, <code>city</code>, <code>neighborhood</code>, <code>street</code>, <code>status</code></p>
+
+<p>a própria biblioteca trata de buscar e preencher os 6 últimos então não há métodos <em>getters</em> para eles, obviamente.</p>
+
+<p>Todos os atributos tem seus métodos <em>setters</em>.</p>
+
+<h2>Autor</h2>
+
+<ul>
+<li>Rodrigo Alves Vieira - <a href="mailto:rodrigovieira1994@gmail.com">rodrigovieira1994@gmail.com</a> - <a href="http://www.rodrigoalvesvieira.com">http://www.rodrigoalvesvieira.com</a>
+</li>
+</ul><h2>Agradecimentos</h2>
+
+<p>Obrigado ao pessoal do <a href="www.cepfacil.com.br">CepFacil</a> por oferecer gratuitamente esse webservice.</p>
+
+<h2>Doações</h2>
+
+<p>Se esse projeto é tão útil para você que lhe faz considerar fazer alguma doação, ao invés de me pagar uma cerveja (o que seria um boa ideia, com certeza) considere doar para o <a href="https://www.khanacademy.org/">Khan Academy</a>.</p>
+
+<h2>Licença</h2>
+
+<p>CepFacil é liberado sob a licença do Eclipse com atribuições a Rodrigo Alves Vieira.
+Veja os detalhes no arquivo LICENSE desse repositório.</p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/rodrigoalvesvieira">rodrigoalvesvieira</a> can be found on <a href="https://github.com/rodrigoalvesvieira/cepfacil">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-38428154-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
