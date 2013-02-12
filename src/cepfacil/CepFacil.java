@@ -7,8 +7,9 @@
 package cepfacil;
 
 import java.net.*;
-import java.io.*;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
 
 public class CepFacil {
     public static final String VERSION = "0.0.1"; // Library version
