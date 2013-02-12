@@ -1,5 +1,9 @@
 *.class
 
+# Library development interface for
+# testing methods et cetera.
+src/ui
+
 # Package Files #
 *.jar
 *.war
