@@ -95,8 +95,14 @@ public class CepFacil {
         return this.status.equals("encontrado");
     }
 
+    public String fullAddress() {
+        return this.addressType + " " + this.street + ", " + this.neighborhood + ", " + this.city + " "
+                + this.zipCode + " - " + this.state + ", Brasil";   
+    }
+
     @Override
     public String toString() {
-        return this.addressType + " " + this.street + ", " + this.city + " - " + this.state + ", Brasil";   
+        return this.addressType + " " + this.street + ", " + this.city + " " + this.zipCode + " - " + 
+                this.state + ", Brasil";   
     }
 }

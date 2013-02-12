@@ -19,6 +19,15 @@ ruaCasa.getNeighborhood();
 
 ruaCasa.isValid(); // retorna true caso o endereço tenha sido encontrado, do contrário retorna false. Essa tu advinhou, hein?
 
+// Invocando o método toString(); você obtém o endereço por extenso:
+
+System.out.println(ruaCasa); // RUA PANELAS, PAULISTA 53416-540 - PE, Brasil
+
+// Para uma versão do método toString(); que inclui o atributo bairro (neighborhood)
+// você pode usar um outro método, chamado fullAddress();
+
+ruaCasa.fullAddress(); // RUA PANELAS, ARTUR LUNDGREN II, PAULISTA 53416-540 - PE, Brasil
+
 ```
 
 O objeto rua `ruaCasa` tem 8 atributos:
