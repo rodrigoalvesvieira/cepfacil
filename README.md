@@ -9,7 +9,7 @@ Wrapper Java para o serviço [CepFacil](cepfacil.com.br)
 String zipCode = "53417-540";
 String token = "0E2ACA03-FC7F-4E87-9046-A8C46637BA9D"; // obtenha o seu em www.cepfacil.com.br
 
-CepFacil ruaCasa = new CepFacil("53417-540", "0E2ACA03-FC7F-4E87-9046-A8C46637BA9D");
+CepFacil ruaCasa = new CepFacil(zipCode, token);
 
 ruaCasa.getZipCode();
 
