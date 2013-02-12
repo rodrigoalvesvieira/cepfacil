@@ -1,6 +1,6 @@
 # CepFacil for Java
 
-Wrapper Java para o serviço [CepFacil](cepfacil.com.br)
+Wrapper Java para o serviço [CepFacil]
 
 ## Uso
 
@@ -44,7 +44,7 @@ Todos os atributos tem seus métodos _setters_.
 
 ## Agradecimentos
 
-Obrigado ao pessoal do [CepFacil](www.cepfacil.com.br) por oferecer gratuitamente esse webservice.
+Obrigado ao pessoal do [CepFacil] por oferecer gratuitamente esse webservice.
 
 ## Doações
 
@@ -54,3 +54,5 @@ Se esse projeto é tão útil para você que lhe faz considerar fazer alguma doa
 
 CepFacil é liberado sob a licença do Eclipse com atribuições a Rodrigo Alves Vieira.
 Veja os detalhes no arquivo LICENSE desse repositório.
+
+[CepFacil]: http://www.cepfacil.com.br
