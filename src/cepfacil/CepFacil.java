@@ -16,17 +16,19 @@ public class CepFacil {
     private String zipCode, apiKey, state, addressType, city, neighborhood, street, status = "";
 
     public CepFacil(String zipCode, String apiKey) throws IOException {
-        String line = "";
         this.zipCode = zipCode;
+        String line, result = "";
 
         try {
             URL apiUrl = new URL("http://www.cepfacil.com.br/service/?filiacao=" + apiKey + "&cep=" + 
                     CepFacil.parseZipCode(zipCode) + "&formato=texto");
 
-            String result = "";
-
             BufferedReader in = new BufferedReader(new InputStreamReader(apiUrl.openStream()));
 
+            /*
+             * Reads line by line of the response text and attaches it to the
+             * result String, to be parsed later in this constructor method
+             */
             while ((line = in.readLine()) != null) {
                 result += line;
             }
@@ -34,8 +36,9 @@ public class CepFacil {
 
             this.status = result.split("=")[1].split("&")[0]; // status
 
-            // Set all attributes as null if either the informed zipCode
-            // or apiKey is wrong
+            /* Set all attributes as null if either the informed zipCode
+             * or apiKey is wrong
+             */
             if (this.status.equals("nao-encontrado")) {
                 this.addressType = null;
                 this.state = null;
@@ -43,6 +46,10 @@ public class CepFacil {
                 this.neighborhood = null;
                 this.street = null;
             } else {
+                /*
+                 * Breaks the response text into pieces and set each piece as the right
+                 * object attribute
+                 */
                 this.status = result.split("=")[1].split("&")[0]; // status
                 this.addressType = result.split("=")[3].split("&")[0]; // type of the way
                 this.state = result.split("=")[4].split("&")[0]; // state
@@ -55,6 +62,43 @@ public class CepFacil {
         }
     }
 
+    static String parseZipCode(String zipCode) {
+        /*
+         * This method parses the user informed zip code into a String object that contains
+         * no dashes so the webservice can find it. So, for example, 55555-555 becomes 55555555.
+         * @param zipCode the zipCode from which you want to extract an address
+         * @return the zip code String without the dash
+         */
+        String parsedZipCode = zipCode.replaceAll("[^0-9]+", "");
+        return parsedZipCode;
+    }
+
+    public boolean isValid() {
+        /*
+         * @return true if the informed zip code corresponds to an actual address. Returns false otherwise.
+         */
+        return this.status.equals("encontrado");
+    }
+
+    public String fullAddress() {
+        /*
+         * Returns the String object for a full description of the address, containing
+         * exactly the address type (street/avenue/lane), street name, neighborhood, city
+         * zip code, state and country name (Brazil only, of course).
+         */
+        return this.addressType + " " + this.street + ", " + this.neighborhood + ", " + this.city + " "
+        + this.zipCode + " - " + this.state + ", Brasil";   
+    }
+
+    @Override
+    public String toString() {
+        return this.addressType + " " + this.street + ", " + this.city + " " + this.zipCode + " - " + 
+                this.state + ", Brasil";   
+    }
+
+    /*
+     * Getter methods come right below
+     */
     public String getAPiKey() {
         return this.apiKey;
     }
@@ -85,25 +129,5 @@ public class CepFacil {
 
     public String getStatus() {
         return this.status;
-    }
-
-    static String parseZipCode(String zipCode) {
-        String parsedZipCode = zipCode.replaceAll("[^0-9]+", "");
-        return parsedZipCode;
-    }
-
-    public boolean isValid() {
-        return this.status.equals("encontrado");
-    }
-
-    public String fullAddress() {
-        return this.addressType + " " + this.street + ", " + this.neighborhood + ", " + this.city + " "
-                + this.zipCode + " - " + this.state + ", Brasil";   
-    }
-
-    @Override
-    public String toString() {
-        return this.addressType + " " + this.street + ", " + this.city + " " + this.zipCode + " - " + 
-                this.state + ", Brasil";   
     }
 }
