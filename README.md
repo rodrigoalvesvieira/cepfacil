@@ -1,6 +1,7 @@
 # CepFacil for Java
 
 Wrapper Java para o serviço [CepFacil]
+Obtenha qualquer endereço brasileiro a partir do CEP
 
 ## Uso
 
@@ -11,13 +12,13 @@ String token = "0E2ACA03-FC7F-4E87-9046-A8C46637BA9D"; // obtenha o seu em www.c
 
 CepFacil ruaCasa = new CepFacil(zipCode, token);
 
-ruaCasa.getZipCode();
+ruaCasa.getZipCode(); // 53416-540
 
-ruaCasa.getCity();
+ruaCasa.getCity(); // PAULISTA
 
-ruaCasa.getNeighborhood();
+ruaCasa.getStreet(); // PANELAS
 
-ruaCasa.isValid(); // retorna true caso o endereço tenha sido encontrado, do contrário retorna false. Essa tu advinhou, hein?
+ruaCasa.isValid(); // retorna true se o endereço for encontrado, do contrário retorna false.
 
 // Invocando o método toString(); você obtém o endereço por extenso:
 
@@ -28,6 +29,14 @@ System.out.println(ruaCasa); // RUA PANELAS, PAULISTA 53416-540 - PE, Brasil
 
 ruaCasa.fullAddress(); // RUA PANELAS, ARTUR LUNDGREN II, PAULISTA 53416-540 - PE, Brasil
 
+CepFacil ufpe = new CepFacil("50740-540", token);
+
+System.out.println(ufpe); // AVENIDA PROFESSOR LUIZ FREIRE, RECIFE 50740-540 - PE, Brasil
+
+CepFacil masp = new CepFacil("01310-200", token);
+
+System.out.println(masp); // AVENIDA PAULISTA, SÃO PAULO 01310-200 - SP, Brasil
+
 ```
 
 O objeto rua `ruaCasa` tem 8 atributos:
@@ -37,6 +46,14 @@ O objeto rua `ruaCasa` tem 8 atributos:
 a própria biblioteca trata de buscar e preencher os 6 últimos então não há métodos _getters_ para eles, obviamente.
 
 Todos os atributos tem seus métodos _setters_.
+
+A classe `CepFacil` possui também uma constante que informa a versão dela que está em funcionamento:
+
+```java
+
+System.out.print(CepFacil.VERSION);
+
+```
 
 ## Autor
 
@@ -52,7 +69,7 @@ Se esse projeto é tão útil para você que lhe faz considerar fazer alguma doa
 
 ## Licença
 
-CepFacil é liberado sob a licença do Eclipse com atribuições a Rodrigo Alves Vieira.
+CepFacil é liberado sob a licença do Eclipse.
 Veja os detalhes no arquivo LICENSE desse repositório.
 
 [CepFacil]: http://www.cepfacil.com.br
