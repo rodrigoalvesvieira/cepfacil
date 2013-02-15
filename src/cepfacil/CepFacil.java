@@ -6,7 +6,8 @@
 
 package cepfacil;
 
-import java.net.*;
+import java.net.URL;
+import java.net.MalformedURLException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
