@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2013 Rodrigo Alves Vieira. All Rights Reserved.
- * Copyrights licensed under the Eclipse Public License.
+ * Copyright (c) 2013 Rodrigo Alves Vieira.
+ * Licensed under the Eclipse Public License.
  * See the accompanying LICENSE file for terms.
  */
 
@@ -16,7 +16,7 @@ public class CepFacil {
     public static final String VERSION = "0.0.1"; // Library version
     private String zipCode, apiKey, state, addressType, city, neighborhood, street, status = "";
 
-    public CepFacil(String zipCode, String apiKey) throws IOException {
+    public CepFacil(String zipCode, String apiKey) throws IOException, InvalidZipCodeException {
         this.zipCode = zipCode;
         String line, result = "";
 
@@ -63,7 +63,7 @@ public class CepFacil {
         }
     }
 
-    static String parseZipCode(String zipCode) {
+    static String parseZipCode(String zipCode) throws InvalidZipCodeException {
         /*
          * This method parses the user informed zip code into a String object that contains
          * no dashes so the webservice can find it. So, for example, 55555-555 becomes 55555555.
@@ -71,6 +71,11 @@ public class CepFacil {
          * @return the zip code String without the dash
          */
         String parsedZipCode = zipCode.replaceAll("[^0-9]+", "");
+        
+        if (parsedZipCode.length() != 8) {
+            throw new InvalidZipCodeException();
+        }
+        
         return parsedZipCode;
     }
 
