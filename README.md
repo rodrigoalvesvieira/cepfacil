@@ -7,7 +7,7 @@ Obtenha qualquer endereço brasileiro a partir do CEP
 
 ```java
 
-String zipCode = "53417-540";
+String zipCode = "53416-540";
 String token = "0E2ACA03-FC7F-4E87-9046-A8C46637BA9D"; // obtenha o seu em www.cepfacil.com.br
 
 CepFacil ruaCasa = new CepFacil(zipCode, token);
@@ -29,13 +29,30 @@ System.out.println(ruaCasa); // RUA PANELAS, PAULISTA 53416-540 - PE, Brasil
 
 ruaCasa.fullAddress(); // RUA PANELAS, ARTUR LUNDGREN II, PAULISTA 53416-540 - PE, Brasil
 
-CepFacil ufpe = new CepFacil("50740-540", token);
+
+CepFacil ufpe;
+try {
+    ufpe = new CepFacil("53416-540", token);
+} catch (AddressNotFoundException e) {
+    e.printStackTrace();
+}
 
 System.out.println(ufpe); // AVENIDA PROFESSOR LUIZ FREIRE, RECIFE 50740-540 - PE, Brasil
 
 CepFacil masp = new CepFacil("01310-200", token);
 
 System.out.println(masp); // AVENIDA PAULISTA, SÃO PAULO 01310-200 - SP, Brasil
+
+
+// Dispara uma exeção do tipo AddressNotFoundException pois não existe
+// endereço no Brasil correspondente ao CEP 00000-000
+
+try {
+    CepFacil infinitopolis = new CepFacil("00000-000", token);
+} catch (AddressNotFoundException e) {
+    System.out.println("oops. Fail");
+    e.printStackTrace();
+}
 
 ```
 

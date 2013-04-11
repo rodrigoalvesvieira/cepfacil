@@ -13,10 +13,10 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 
 public class CepFacil {
-    public static final String VERSION = "0.0.1"; // Library version
+    public static final String VERSION = "0.1.0"; // Library version
     private String zipCode, apiKey, state, addressType, city, neighborhood, street, status = "";
 
-    public CepFacil(String zipCode, String apiKey) throws IOException, InvalidZipCodeException {
+    public CepFacil(String zipCode, String apiKey) throws IOException, InvalidZipCodeException, AddressNotFoundException {
         this.zipCode = zipCode;
         String line, result = "";
 
@@ -41,11 +41,7 @@ public class CepFacil {
              * or apiKey is wrong
              */
             if (this.status.equals("nao-encontrado")) {
-                this.addressType = null;
-                this.state = null;
-                this.city = null;
-                this.neighborhood = null;
-                this.street = null;
+                throw new AddressNotFoundException();
             } else {
                 /*
                  * Breaks the response text into pieces and set each piece as the right
@@ -73,7 +69,7 @@ public class CepFacil {
         String parsedZipCode = zipCode.replaceAll("[^0-9]+", "");
         
         if (parsedZipCode.length() != 8) {
-            throw new InvalidZipCodeException();
+            throw new InvalidZipCodeException(zipCode);
         }
         
         return parsedZipCode;
