@@ -18,7 +18,7 @@ import cepfacil.InvalidZipCodeException;
 @RunWith(JUnit4.class)
 public class CepFacilTest {
     @Test
-    public void testMultiply() throws InvalidZipCodeException {
+    public void testZipCodeFormat() throws InvalidZipCodeException {
       String zipCode = "53416-540";
       assertEquals("53416540", CepFacil.parseZipCode(zipCode));
     }
