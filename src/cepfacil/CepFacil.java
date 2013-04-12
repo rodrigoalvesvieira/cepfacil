@@ -59,7 +59,7 @@ public class CepFacil {
         }
     }
 
-    static String parseZipCode(String zipCode) throws InvalidZipCodeException {
+    public static String parseZipCode(String zipCode) throws InvalidZipCodeException {
         /*
          * This method parses the user informed zip code into a String object that contains
          * no dashes so the webservice can find it. So, for example, 55555-555 becomes 55555555.
