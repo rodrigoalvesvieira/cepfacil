@@ -81,10 +81,6 @@ System.out.print(CepFacil.VERSION);
 
 Obrigado ao pessoal do [CepFacil] por oferecer gratuitamente esse webservice.
 
-## Doações
-
-Se esse projeto é tão útil para você que lhe faz considerar fazer alguma doação, ao invés de me pagar uma cerveja (o que seria um boa ideia, com certeza) considere doar para o [Khan Academy](https://www.khanacademy.org/).
-
 ## Licença
 
 CepFacil é liberado sob a licença do Eclipse.
