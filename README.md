@@ -57,7 +57,7 @@ try {
 
 ```
 
-O objeto rua `ruaCasa` tem 8 atributos:
+O objeto `ruaCasa` do exemplo acima tem 8 atributos:
 
 `zipCode`, `apiKey`, `state`, `addressType`, `city`, `neighborhood`, `street`, `status`
 
