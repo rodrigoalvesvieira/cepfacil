@@ -68,7 +68,7 @@ Todos os atributos tem seus métodos _setters_.
 
 // Recebe uma String e faz o parse desssa para formatar o CEP antes da submissão para o webservice.
 String teatroBourbon = "91340-110";
-CepFacil.parseZipCode(teatroBourbon);
+CepFacil.parseZipCode(teatroBourbon); // "91340110"
 
 // CEPs possuem 8 caracteres portanto informar um CEP que não atenda essa regra dispara uma exceção:
 CepFacil.parseZipCode("53417-5400"); // dispara InvalidZipCodeException
