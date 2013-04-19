@@ -1,8 +1,6 @@
-# CepFacil for Java
+# CepFacil
 
-Wrapper Java para o serviço [CepFacil]
-
-Obtenha qualquer endereço brasileiro a partir do CEP
+Wrapper Java para o serviço [CepFacil]. Obtenha qualquer endereço brasileiro a partir do CEP.
 
 ## Uso
 
