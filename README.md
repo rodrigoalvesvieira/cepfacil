@@ -52,7 +52,6 @@ try {
     System.out.println("oops. Fail");
     e.printStackTrace();
 }
-
 ```
 
 O objeto `ruaCasa` do exemplo acima tem 8 atributos:
@@ -63,12 +62,23 @@ a própria biblioteca trata de buscar e preencher os 6 últimos então não há 
 
 Todos os atributos tem seus métodos _setters_.
 
+#### Outros métodos
+
+```java
+
+// Recebe uma String e faz o parse desssa para formatar o CEP antes da submissão para o webservice.
+String teatroBourbon = "91340-110";
+CepFacil.parseZipCode(teatroBourbon);
+
+// CEPs possuem 8 caracteres portanto informar um CEP que não atenda essa regra dispara uma exceção:
+CepFacil.parseZipCode("53417-5400"); // dispara InvalidZipCodeException
+```
+
 A classe `CepFacil` possui também uma constante que informa a versão dela que está em funcionamento:
 
 ```java
 
 System.out.print(CepFacil.VERSION);
-
 ```
 
 ## Autor
