@@ -73,7 +73,7 @@ System.out.print(CepFacil.VERSION);
 
 ## Autor
 
-* Rodrigo Alves Vieira - rodrigovieira1994@gmail.com - http://www.rodrigoalvesvieira.com
+* Rodrigo Alves Vieira - rodrigovieira1994 [at] gmail [dot] com - http://www.rodrigoalvesvieira.com
 
 ## Agradecimentos
 
@@ -82,6 +82,6 @@ Obrigado ao pessoal do [CepFacil] por oferecer gratuitamente esse webservice.
 ## Licença
 
 CepFacil é liberado sob a licença do Eclipse.
-Veja os detalhes no arquivo LICENSE desse repositório.
+Veja os detalhes no arquivo LICENSE na raiz do projeto.
 
 [CepFacil]: http://www.cepfacil.com.br
