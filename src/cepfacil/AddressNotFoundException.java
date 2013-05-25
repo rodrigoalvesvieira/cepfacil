@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013 Rodrigo Alves Vieira.
+ * Copyright (c) 2013 Rodrigo Alves.
  * Licensed under the Eclipse Public License.
  * See the accompanying LICENSE file for terms.
  */

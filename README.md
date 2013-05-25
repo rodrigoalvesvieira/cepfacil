@@ -83,7 +83,7 @@ System.out.print(CepFacil.VERSION);
 
 ## Autor
 
-* Rodrigo Alves Vieira - rodrigovieira1994 [at] gmail [dot] com - http://www.rodrigoalvesvieira.com
+* Rodrigo Alves - rodrigovieira1994 [at] gmail [dot] com - http://www.rodrigoalvesvieira.com
 
 ## Agradecimentos
 

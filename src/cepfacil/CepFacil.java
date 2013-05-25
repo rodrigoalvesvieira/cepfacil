@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013 Rodrigo Alves Vieira.
+ * Copyright (c) 2013 Rodrigo Alves.
  * Licensed under the Eclipse Public License.
  * See the accompanying LICENSE file for terms.
  */
@@ -21,7 +21,7 @@ public class CepFacil {
         String line, result = "";
 
         try {
-            URL apiUrl = new URL("http://www.cepfacil.com.br/service/?filiacao=" + apiKey + "&cep=" + 
+            URL apiUrl = new URL("http://www.cepfacil.com.br/service/?filiacao=" + apiKey + "&cep=" +
                     CepFacil.parseZipCode(zipCode) + "&formato=texto");
 
             BufferedReader in = new BufferedReader(new InputStreamReader(apiUrl.openStream()));
@@ -67,11 +67,11 @@ public class CepFacil {
          * @return the zip code String without the dash
          */
         String parsedZipCode = zipCode.replaceAll("[^0-9]+", "");
-        
+
         if (parsedZipCode.length() != 8) {
             throw new InvalidZipCodeException(zipCode);
         }
-        
+
         return parsedZipCode;
     }
 
@@ -89,13 +89,13 @@ public class CepFacil {
          * zip code, state and country name (Brazil only, of course).
          */
         return this.addressType + " " + this.street + ", " + this.neighborhood + ", " + this.city + " "
-        + this.zipCode + " - " + this.state + ", Brasil";   
+        + this.zipCode + " - " + this.state + ", Brasil";
     }
 
     @Override
     public String toString() {
-        return this.addressType + " " + this.street + ", " + this.city + " " + this.zipCode + " - " + 
-                this.state + ", Brasil";   
+        return this.addressType + " " + this.street + ", " + this.city + " " + this.zipCode + " - " +
+                this.state + ", Brasil";
     }
 
     /*
