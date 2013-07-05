@@ -2,6 +2,8 @@
 
 Wrapper Java para o serviço [CepFacil]. Obtenha qualquer endereço brasileiro a partir do CEP.
 
+[![Build Status](https://travis-ci.org/rodrigoalvesvieira/cepfacil.png?branch=master)](https://travis-ci.org/rodrigoalvesvieira/cepfacil)
+
 ## Uso
 
 ```java
